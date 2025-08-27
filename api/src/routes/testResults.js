@@ -11,35 +11,26 @@ const router = express.Router();
 // Mock lab test result data
 let mockTestResults = [
   {
-    id: 1,
-    patientName: 'Alice Johnson',
-    testName: 'Blood Glucose',
-    result: 'Normal',
-    unit: 'mg/dL',
-    referenceRange: '70-99',
-    date: '2025-08-01',
+    id: '1',
+    name: 'Blood Glucose Test',
     status: 'completed',
+    createdAt: '2024-01-15T10:30:00Z',
+    updatedAt: '2024-01-15T10:30:00Z'
   },
   {
-    id: 2,
-    patientName: 'Bob Smith',
-    testName: 'Cholesterol',
-    result: 'High',
-    unit: 'mg/dL',
-    referenceRange: '< 200',
-    date: '2025-08-05',
+    id: '2', 
+    name: 'Cholesterol Test',
     status: 'pending',
+    createdAt: '2024-01-16T10:30:00Z',
+    updatedAt: '2024-01-16T10:30:00Z'
   },
   {
-    id: 3,
-    patientName: 'Carol Lee',
-    testName: 'COVID-19 PCR',
-    result: 'Negative',
-    unit: '',
-    referenceRange: 'N/A',
-    date: '2025-08-10',
-    status: 'completed',
-  },
+    id: '3',
+    name: 'COVID-19 PCR Test',
+    status: 'in-progress',
+    createdAt: '2024-01-17T10:30:00Z',
+    updatedAt: '2024-01-17T10:30:00Z'
+  }
 ];
 
 
@@ -47,7 +38,7 @@ let mockTestResults = [
  * @route   GET /api/test-results
  * @desc    Get all test results
  */
-router.get('/test-results', (_req, res) => {
+router.get('/test-results', (req, res) => {
   try {
     return res.status(200).json(mockTestResults);
   } catch (error) {
@@ -59,7 +50,7 @@ router.get('/test-results', (_req, res) => {
  * @route   PATCH /api/test-results/:id
  * @desc    Update test result status
  */
-router.patch('/test-results/:id', (_req, res) => {
+router.patch('/test-results/:id', (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
@@ -88,7 +79,7 @@ router.patch('/test-results/:id', (_req, res) => {
  * @route   POST /api/test-results
  * @desc    Add a new test result (idempotent)
  */
-router.post('/test-results', (_req, res) => {
+router.post('/test-results', (req, res) => {
   try {
     const { patientName, testName, result, unit, referenceRange, date, status } = req.body;
 

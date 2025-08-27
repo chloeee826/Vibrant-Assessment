@@ -30,5 +30,15 @@ npm run dev
 - Implement directly in this repo; keep commits small and descriptive.
 - Update the README with any decisions or deviations.
 
+## AI Assistance
+
+In this project, AI tools were used to improve development efficiency and speed up implementation in several areas:
+
+- **Mock Data Generation**  
+  AI was used to create realistic sample data for testing APIs and UI components.
+- **Code Suggestions**  
+  Leveraged AI to assist with code ideas, improve validation logic, and handle error cases more efficiently.
+- **Documentation Support**  
+  Used AI to draft parts of the API documentation and clarify implementation details.
 
 **Note:** The assessment requires using **Ant Design Table and Form** for the inventory table and sample form. The web project already includes `antd`.
