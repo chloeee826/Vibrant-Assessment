@@ -9,7 +9,7 @@ const express = require('express');
 const { requireAuth } = require('../middleware/auth');
 const router = express.Router();
 
-// Mock database data since Knex setup might not be complete
+// Mock database data 
 const mockMaintenanceData = {
   '1': {
     equipment: { id: '1', name: 'Centrifuge Model X', type: 'Laboratory Equipment' },
