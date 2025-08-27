@@ -30,7 +30,7 @@ const mockUsers = [
   }
 ];
 
-router.post('/auth/login', (_req, res) => { try {
+router.post('/auth/login', (req, res) => { try {
   const { email, password } = req.body;
   
   // Validate input

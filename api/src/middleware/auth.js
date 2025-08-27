@@ -11,7 +11,7 @@
  // Mock JWT secret
  const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here';
 
-function requireAuth(_req, res, _next) {
+function requireAuth(req, res, next) {
   try {
     const authHeader = req.headers.authorization;
     

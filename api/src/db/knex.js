@@ -29,4 +29,4 @@
     fs.mkdirSync(dataDir, { recursive: true });
   }
 
-module.exports = null; // placeholder
+module.exports = knex; // placeholder

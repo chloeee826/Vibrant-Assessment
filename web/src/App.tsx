@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryTable from './components/InventoryTable';
 import { useTestResults, useUpdateTestStatus, TestResult } from './hooks/useTestResults';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { SampleForm } from './components/SampleForm';
+import { StatusBadge } from './components/StatusBadge';
 
 const queryClient = new QueryClient();
 
@@ -74,11 +76,20 @@ export default function App() {
       <section className="bg-white rounded-xl shadow p-4">
         <h2 className="text-lg font-medium">4) Sample Form</h2>
         <p className="text-sm text-gray-600">Build <code>SampleForm</code> in <code>src/components/SampleForm.tsx</code> with client/server validation parity.</p>
+        <SampleForm />
       </section>
 
       <section className="bg-white rounded-xl shadow p-4">
         <h2 className="text-lg font-medium">5) Status Badge</h2>
-        <p className="text-sm text-gray-600">Implement <code>StatusBadge</code> in <code>src/components/StatusBadge.tsx</code> with accessible Tailwind styles.</p>
+        <div className="space-y-2">
+        <p className="text-sm text-gray-600">Status badge examples:</p>
+        <div className="flex gap-2">
+      <StatusBadge status="pending" />
+      <StatusBadge status="in-progress" />
+      <StatusBadge status="completed" />
+      <StatusBadge status="failed" />
+          </div>
+        </div>
       </section>
     </div>
     </Router>

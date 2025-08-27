@@ -10,7 +10,7 @@ const { requireAuth } = require('../middleware/auth');
 const router = express.Router();
 
 
-// Mock database data since Knex setup might not be complete
+// Mock database data
 const mockMaintenanceData = {
   '1': {
     equipment: { id: '1', name: 'Centrifuge Model X', type: 'Laboratory Equipment' },
@@ -116,8 +116,5 @@ router.get('/maintenance/:equipmentId', requireAuth, validateEquipmentId, valida
 });
 
 
-router.get('/maintenance/:equipmentId', requireAuth, (_req, res) => {
-  return res.status(501).json({ message: 'Not Implemented: GET /api/maintenance/:equipmentId' });
-});
 
 module.exports = router;
